@@ -1,0 +1,8 @@
+EmptyCavePath	EmptyCavePath	EmptyCavePath	LeaveCaveRoom
+				EmptyCavePath		
+				GiantSpiderRoom	
+				EmptyCavePath		
+GiantSpiderRoom	EmptyCavePath	StartingRoom	EmptyCavePath	EmptyCavePath
+EmptyCavePath			EmptyCavePath		
+EmptyCavePath	EmptyCavePath	EmptyCavePath		
+				FindDaggerRoom	GiantSpiderRoom	
