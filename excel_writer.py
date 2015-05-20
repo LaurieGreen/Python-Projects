@@ -2,7 +2,7 @@ from openpyxl import Workbook
 from openpyxl import load_workbook
 from openpyxl.cell import coordinate_from_string, column_index_from_string
 
-wb = load_workbook('test.xlsx')
+wb = load_workbook('I:\Storage\Documents\Dev Projects\Excel\\test.xlsx')
 
 # grab the active worksheet
 ws = wb.active
@@ -24,4 +24,4 @@ for colomn in ws.columns:
 			cell.offset(target_row-3,0).value = holiday
 
 # Save the file
-wb.save('test.xlsx')
+wb.save('I:\Storage\Documents\Dev Projects\Excel\\test.xlsx')
