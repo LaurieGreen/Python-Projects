@@ -8,19 +8,23 @@ wb = load_workbook('I:\Storage\Documents\Dev Projects\Excel\\test.xlsx', data_on
 # grab the active worksheet
 ws = wb.active
 
+target_row = 0
 target_date = raw_input("Date: ")
 target_tester = raw_input("Name: ")
 holiday = raw_input("Holiday: ")
+
 
 for colomn in ws.columns:
 	for cell in colomn:
 		if cell.value == target_tester:
 			xy = coordinate_from_string(cell.coordinate)
 			target_row = xy[1]
+			print target_row
+			print "breaking now"
 			break
-
-for colomn in ws.columns:
-	for cell in colomn:
+		
+for colomn2 in ws.columns:
+	for cell in colomn2:
 		if cell.is_date == True:
 			x = str(cell.value)
 			string_date = datetime.strptime(x, "%Y-%m-%d %H:%M:%S").strftime('%d/%m/%Y')

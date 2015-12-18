@@ -1,0 +1,36 @@
+import unittest
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+
+class SignIn(unittest.TestCase):
+
+	def setUp(self):
+		self.driver = webdriver.Firefox()
+		email_address = "laurie.green@stv.tv"
+		password = "spring18"
+		
+	def test_sign_in(self):
+		driver = self.driver
+		driver.get("http://www.stv.tv") 
+		print "Launching Firefox"
+		self.assertIn("Sign in", driver.page_source)
+		sign_in = driver.find_element_by_link_text("Sign in")
+		sign_in.click()
+		time.sleep(2)
+		driver.switch_to_alert()
+		email_input = driver.find_element_by_name("loginID")
+		password_input = driver.find_element_by_id("sign-in-password")
+		time.sleep(2)
+		email_input.send_keys("laurie.green@stv.tv")
+		password_input.send_keys("spring18")
+		time.sleep(2)
+		sign_in_button = driver.find_element_by_xpath("//input[@value='Sign in']")
+		sign_in_button.click()
+		time.sleep(10)
+		
+	def tearDown(self):
+		self.driver.close()
+
+if __name__ == "__main__":
+	unittest.main()
